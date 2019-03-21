@@ -83,10 +83,10 @@ def dump(url,column,table):
 	cek = requests.get(url+payload).text
 	soup = BeautifulSoup(cek,'html.parser')
 	find = soup.find_all('node')
-	print "------------=======[Columns]=======-----------"
-	for db in find:
-		print "- "+db.get('url')
-	print "------------=======[Column]=======-----------"
+	print "------------=======[Data]=======-----------"
+	for dat in find:
+		print "- "+dat.get('url')
+	print "------------=======[Data]=======-----------"
 
 def help():
 	print warna.MERAH+"""
