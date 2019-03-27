@@ -29,7 +29,7 @@ def cek(url):
 			print "- "+vu.get('url')
 		print "------------=======[Version ::: User]=======-----------"
 	else:
-		print MERAH+"[+] Not Vulnerable"+TUTUP
+		print warna.MERAH+"[+] Not Vulnerable"+warna.TUTUP
 
 def database(url):
 	print warna.HIJAU+"[+] Checking "+url+warna.TUTUP
